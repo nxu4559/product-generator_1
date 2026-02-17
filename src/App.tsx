@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import AIGenerator from './AIGenerator';
 import BatchProcessor from './BatchProcessor';
 
 function Counter() {
