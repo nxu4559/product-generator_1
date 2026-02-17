@@ -18,7 +18,7 @@ function BatchProcessor() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-api-key': import.meta.env.VITE_ANTHROPIC_API_KEY,, // ← PUT YOUR KEY HERE!
+          'x-api-key': import.meta.env.VITE_ANTHROPIC_API_KEY, // ← PUT YOUR KEY HERE!
           'anthropic-version': '2023-06-01',
         },
         body: JSON.stringify({
