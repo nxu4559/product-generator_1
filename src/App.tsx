@@ -66,7 +66,7 @@ function App() {
       </div>
 
       {/* Show the selected app */}
-      {activeTab === 'counter' ? <Counter /> : <AIGenerator />}
+      {activeTab === 'counter' && <Counter />}
       {activeTab === 'batch' && <BatchProcessor />}
     </div>
   );
