@@ -25,6 +25,25 @@ function BatchProcessor() {
       });
 
       const data = await response.json();
+
+      // Log the response for debugging
+      console.log('API Response:', data);
+
+      // Check for errors
+      if (data.error) {
+        alert(`Error: ${data.error}`);
+        setLoading(false);
+        return;
+      }
+
+      // Check if content exists
+      if (!data.content || !data.content[0]) {
+        alert('Unexpected response format from API');
+        console.error('Response data:', data);
+        setLoading(false);
+        return;
+      }
+
       let responseText = data.content[0].text.trim();
 
       // Remove markdown code blocks if present
@@ -37,9 +56,7 @@ function BatchProcessor() {
       setProducts(parsedProducts);
     } catch (error) {
       console.error('Error:', error);
-      alert(
-        'Error processing specs. Make sure API key is set and text is valid.'
-      );
+      alert('Error processing specs. Check console for details.');
     }
 
     setLoading(false);
